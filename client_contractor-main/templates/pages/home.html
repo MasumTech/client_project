@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Field View Contractors | Home
+{% endblock title %}
+
+{% block css_back %}
+<style>
+    .ms-overlay::before {
+        background-image: url("{% static 'images/back1.gif' %}");
+        background-repeat: no-repeat;
+        background-size: 1400px 700px;
+        background-attachment: fixed;
+    }
+    /*.barh3:before {
+        width: 0px;
+    }*/
+</style>
+{% endblock css_back %}
+
+
+
+
+{% block content %}
+
+<section>
+    <div class="block">
+        <div class="container">
+            <div class="kons-construct">
+                <!--<h4 style="font-weight: bold;">We’re <span>Field View</span> Contractors Construction and<br /> Development</h4>-->
+                <!--<h2>Perfection is <br /> Always <br /> Under constuction</h2>-->
+                <h2>“ Whatever good <br >things we build end <br />up building us ”</h2>
+                <h3 style="font-weight: 600; font-size: 32px; color: #21211e; margin-top: 20px;" class="lyr4 tp-resizeme">By jim rhon</h3>
+            </div><!--kons-construct end-->
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="block no-padding">
+        <div class="konst-main-sec">
+            <div class="container">
+                <div class="main-construct-sec"  id="about">
+                    <div class="intro-kons" style="margin-bottom: 95px;">
+                        <div class="row">
+                            <!--<div class="col-lg-6">
+                                <div class="cons-img">
+                                    <img src="{% static 'images/constuct-img.jpg' %}" alt="">
+                                </div><!-cons-img end->
+                                <div class="our-info">
+                                    <img src="{% static 'images/info-pic-1.png' %}" width="340px" style="margin-bottom: 0px; margin-top: 100px;" alt="">
+                                </div>
+                            </div>-->
+                            <div class="col-lg-12">
+                                <div class="about-kons">
+                                    <div class="kn-title">
+                                        <h3>ABOUT (FV)<br /> Field View Contractors, Inc</h3>
+                                      
+                                    </div><!--kn-title end-->
+                                    <h4>Who we are ; Family because it counts</h4>
+                                    <p>our customers expect reliability and trustworthiness and we deliver  </p>
+                                   
+                                    <a style="color: #ffffff; font-weight: 500; color: #000000;" href="#" title="">Read More</a>
+                                    <div class="our-projects-counter">
+                                        <ul>
+                                            <li>
+                                                <h2>30</h2>
+                                                <h4>Years <br />Combined Experience</h4>
+                                            </li>
+                                            <li>
+                                                <h2>50</h2>
+                                                <h4>Projects <br /> Completed</h4>
+                                            </li>
+                                            <li>
+                                                <h2>Regions Served</h2>
+                                                <h4>Southern California & <br /> Northern California</h4>
+                                            </li>
+                                        </ul>
+                                    </div><!--our-projects-counter end-->
+                                </div><!--about-kons end-->
+                            </div>
+                        </div>
+                    </div><!--intro-kons end-->
+                    <div class="our-services style2" id="services">
+                        <div class="kn-title">
+                            <h3>Our Speciality <br />Include</h3>
+                        </div>
+                        <div class="srvcs">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="service-details">
+                                        <div class="service-info">
+                                            <div class="srvc-icon">
+                                                <span class="fas fa-building"></span>
+                                                <h3>Landscape</h3>
+                                            </div>
+                                            <p style="font-weight:500;">We offer full contracting services and have the flexibility to assist our clients in maintenance, construction and installations.</p>
+                                        </div>
+                                    </div><!-- service-details end-->	
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="service-details">
+                                        <div class="service-info">
+                                            <div class="srvc-icon">
+                                                <span class="fas fa-car-battery"></span>
+                                                <h3>Electrical</h3>
+                                            </div>
+                                            <p style="font-weight:500;">We offer full contracting services and have the flexibility to assist our clients in power poles, and underground trenching.</p>
+                                        </div>
+                                    </div><!-- service-details end-->
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="service-details">
+                                        <div class="service-info">
+                                            <div class="srvc-icon">
+                                                <span class="fas fa-broadcast-tower"></span>
+                                                <h3>Data Communication</h3>
+                                            </div>
+                                            <p style="font-weight:500;">We offer full contracting services and have the flexibility to assist our clients in fiber installation, 
+                                            structured cabling, below-ground installation, network cabling and cat 5 installation, and more.</p>
+                                        </div>
+                                    </div><!-- service-details end-->
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="service-details">
+                                        <div class="service-info">
+                                            <div class="srvc-icon">
+                                                <span class="fas fa-snowplow"></span>
+                                                <h3>Excavation</h3>
+                                            </div>
+                                            <p style="font-weight:500;">We offer full contracting services and have the flexibility to assist our clients in excavation and earthmoving.</p>
+                                        </div>
+                                    </div><!-- service-details end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--our-services end-->
+                    <div class="project-gallery">
+                        <div class="kn-title pd">
+                            <h3>Projects That We<br /> Completed</h3>
+                            <a href="{% url 'projects' %}" title="" style="color: #e24821; font-weight: 500;" class="view-all-project">View All Projects</a>
+                        </div><!--kn-title end-->
+                        <div class="pro-gallery">
+                            <div class="row">
+                                
+                           
+                                <div class="col-lg-6">
+                                 {% for project in home_list %}
+                                    <div class="gallery-img">
+                                   
+                                        <img src="{{ project.image1.url }}" alt="">
+                                        <div class="gallery-text left-more">
+                                          <!--  <h5>{{ project.category }}</h5>    -->
+                                            <h3> <a href="{{project.get_absolute_url}}">{{ project.title }}</a></h3>
+                                        </div>
+                                       
+                                    </div><!--gallery-img end-->
+                                     {% endfor %}
+                                </div>
+                       
+                                
+                            </div>
+                        </div><!--pro-gallery end-->
+                    </div><!--project-gallery end-->
+                </div><!--main-construct-sec end-->
+            </div>
+        </div><!--konst-main-sec end-->
+    </div>
+</section>
+
+{% endblock content %}

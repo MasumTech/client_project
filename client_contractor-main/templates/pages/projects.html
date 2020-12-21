@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_back %}
+<style>
+    .ms-overlay::before {
+        background-image: url("{% static 'images/masonary-bg2-1.png' %}");
+        /*background-repeat: no-repeat;
+        background-size: 1400px 700px;*/
+        background-attachment: fixed;
+    }
+</style>
+{% endblock css_back %}
+
+                        
+
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="pager-details full text-center">
+            <h2 class="heading-title">Our Projects</h2>
+            <!--<ul>
+                <li><a href="#" title="">Home</a></li>
+                <li><span>Works</span></li>
+            </ul>-->
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="portfolio-sec">
+        <div class="container">
+            <div class="portfolio-items-filter">
+                <section class="options mgbtm-35">
+                    <div class="option-isotop">
+                        <ul id="filter" class="option-set filters-nav" data-option-key="filter">
+                            <li><a class="selected" data-option-value="*"  onclick="All_all();" >All</a></li>
+
+
+                 {% for cat in  category_list %}
+                    <li><a data-option-value=""  onclick="Filter_project('{{ cat.title }}');"   >{{ cat.title }}</a></li>
+                            {% endfor %}
+
+
+
+<!--                                <li><a data-option-value="">Residential</a></li>-->
+                            
+                            <!--<li><a data-option-value=".commercials">Commercials</a></li>
+                            <li><a data-option-value=".buildings">Buildings</a></li>
+                            <li><a data-option-value=".industrials">Industrials</a></li>-->
+                        </ul>
+
+                    </div>
+                </section>
+                <div class="portfolio-grid">
+                    <div class="row">
+                        <div class="masonary style2">
+                           {% for project in  project_list %}
+                            {% for cat in project.categories.all %}
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="portfolio-item  {{ cat.title }}">
+                                    <div class="pt-img">
+                                        <img src="{{ project.image1.url }}"  alt="">
+                                    </div>
+                                    <div class="item-info">
+
+
+                                        <span style="font-weight: 500; margin-bottom: 0px;">{{ cat.title }}</span>
+                                        {% endfor %}
+
+                                        <h3 style="margin-bottom: 0px;"><a href="{{ project.get_absolute_url }}" >{{ project.title }}</a></h3>
+                                    </div>
+                                </div><!--portfolio-item end-->
+                            </div>
+                          {% endfor %}
+                        </div><!--masonary end-->
+                        <!--<div class="load-more-items">
+                            <a href="#" title="">Load more</a>
+                        </div><!-load-more-items end-->
+                    </div>
+                </div><!--portfolio-grid end-->
+            </div><!--portfolio-items-filter end-->
+        </div>
+    </div><!--portfolio-sec end-->
+</section>
+
+<script>
+
+function Filter_project(parameter) {
+        var x =  parameter;
+        $(".portfolio-item").hide();
+        $("." + x).show();
+        }
+
+      function All_all( ) {
+        $(".portfolio-item").show();
+        }
+
+</script>
+
+
+
+{% endblock content %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_back %}
+<style>
+    
+</style>
+{% endblock css_back %}
+
+
+{% block content %}
+ <section>
+    <div class="block no-padding">
+    
+        <div class="banner-section">
+
+            <img src="{{ project.image1.url }}"  alt="">
+            <h2 style="background-color: #e24821;">commercial real state 1</h2>
+        </div><!--banner-section end-->
+       
+    </div>
+</section> 
+
+
+<main>
+    <div class="page-details-main" style="padding-bottom: 0px;">
+        <section>
+            <div class="container">
+                <div class="location-details bfr">
+                    <h2 class="post-title size2">{{ project.name }}</h2>
+                    <p>{{ project.description }}</p>
+                </div><!--location-details end-->
+                <div class="house-info">
+                    <ul>
+                        <li>
+                            <strong>Location</strong>{{ project.location }}
+                         
+                         
+                        </li>
+                        <li>
+                            <strong>Area</strong> {{ project.area }} Square Feet
+                           
+                        </li>
+                        <li>
+                            <strong>Year</strong> {{ project.year }}
+                        
+                        </li>
+                        <li>
+                            <strong>Budget Range</strong> {{ project.min_budget }} - {{ project.max_budget }} USD
+                      
+                        </li>
+
+                         <li>
+                         {% for cat in project.categories.all %}
+                            <strong>Project Type</strong>  {{ cat.title }}
+                            {% endfor %}
+                        </li>
+
+                        <li>
+                            <strong>Service Provided</strong>  {{ project.services }}
+
+                           <!-- here will show service related all work -->
+                        </li>
+                    </ul>
+                </div><!--house-info end-->
+           
+            </div>
+        </section>
+
+       
+        <section>
+            <div class="house-imgs-slides" style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px;">
+                <div class="house-slider">
+                    <div class="house-slide">
+                       <img src="{{ project.image2.url }}"  alt="">
+                    </div><!--house-slide end-->
+                </div><!--house-slider end-->
+            </div><!--house-imgs-slides end-->
+        </section>
+       
+
+    </div><!--page-details-main end-->
+
+    <!--<section>
+        <div class="pgr-controls">
+            <div class="container">
+                <a href="#" class="ta-left"><span class="lnr lnr-arrow-left"></span>UMI Complex Private Residence</a>
+                <a href="#" class="ta-right">MME Consulting Office<span class="lnr lnr-arrow-right"></span></a>
+            </div>
+        </div><!-pgr-controls end->
+    </section>-->
+
+</main>
+
+{% endblock content %}

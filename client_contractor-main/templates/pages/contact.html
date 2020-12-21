@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contact | Field View Contractors
+{% endblock title %}
+
+{% block css_back %}
+<style>
+    .ms-overlay::before {
+        background-image: url("{% static 'images/masonary-bg2-1.png' %}");
+        /*background-repeat: no-repeat;
+        background-size: 1400px 700px;*/
+        background-attachment: fixed;
+    }
+</style>
+{% endblock css_back %}
+
+
+
+{% block cover %}
+{% endblock cover %}
+
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="pager-details full text-center">
+            <h2 class="heading-title">Contact Us</h2>
+            <!--<ul>
+                <li><a href="#" title="">Home</a></li>
+                <li><span>Works</span></li>
+            </ul>-->
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="contact-info-sec">
+        <div class="container">
+            <div class="cntct-details" style="background-color: #ffffff;">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-address">
+                            <h2><strong>Brooklyn, </strong>New York</h2>
+                            <p>269 King Str, 05th Floor, Utral Hosue Building, Melbourne, VIC 3000, Australia.</p>
+                            <span><b>Email:</b> infor@example.com</span>
+                        </div><!--contact-address end-->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-more-info">
+                            <h5>Call directly:</h5>
+                            <h2>(+035) 527-1710-70</h2>
+                            <div class="address">
+                                <h3>Brand Offices :</h3>
+                                <ul>
+                                    <li><a href="#" title="">Allentown PA</a></li>
+                                    <li><a href="#" title="">Allanta, GA</a></li>
+                                    <li><a href="#" title="">Chicago, IL</a></li>
+                                    <li><a href="#" title="">Dallas, TX</a></li>
+                                    <li><a href="#" title="">Edison, NJ</a></li>
+                                    <li><a href="#" title="">Houston, TX</a></li>
+                                </ul>
+                            </div><!--address end-->
+                            <div class="address">
+                                <h3>Work hours:</h3>
+                                <span>Mon - Sat: 8.00 - 17.00, Sunday closed</span>
+                            </div>
+                        </div><!--contact-more-info end-->
+                    </div>
+                </div>
+            </div><!--cntct-details end-->
+            <div class="contact-form-sec" style="background-color: transparent;">
+                <h3>Have A Question? Contact Us</h3>
+                <p class="success alert alert-success" id="success" style="display:none;"></p>
+                <p class="error alert alert-danger" id="error" style="display:none;"></p>
+
+
+
+
+                <form name="" id="" method="POST" action="">
+                    {% comment %} <input type="hidden" name="axn" value="contact_3">
+                    {% if suc_mess %}
+                    <div class="col-md-12">
+                        <p style="font-size: 16px; color:#198040">{{ suc_mess }}</p>
+                        <p style="visibility: hidden; font-size: 16px; color:#b42116">{{ err_mess }}</p>
+                    </div>
+                    {% elif err_mess %}
+                    <div class="col-md-12">
+                        <p style="visibility: hidden; font-size: 16px; color:#198040">{{ suc_mess }}</p>
+                        <p style="font-size: 16px; color:#b42116">{{ err_mess }}</p>
+                    </div>
+                    {% else %}
+                    <div class="col-md-12">
+                        <p style="visibility: hidden; font-size: 16px; color:#198040">{{ suc_mess }}</p>
+                        <p style="visibility: hidden; font-size: 16px; color:#b42116">{{ err_mess }}</p>
+                    </div>
+                    {% endif %} {% endcomment %}
+                    {% csrf_token %}
+                    <div class="row">
+                        
+                        <div class="col-lg-4">
+                            <input type="text" name="name" id="" placeholder="Name*">
+                        </div>
+                  {% comment %}
+                        <div class="col-lg-4">
+                            <input type="text" name="phone" id="" placeholder="Phone">
+                        </div>{% endcomment %}
+                        <div class="col-lg-4">
+                            <input type="text" name="email_from" id="" placeholder="Email*">
+                        </div>
+                        
+                        <div class="col-lg-12">
+                            <input type="text" name="subject" placeholder="Subject(Optional)">
+                        </div> 
+                        
+                        <div class="col-lg-12">
+                            <textarea name="message" id="" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-lg-12 text-center">
+                            <button type="submit" id="">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--contact-form-sec end-->
+        </div>
+    </div><!--contact-info-sec end-->
+</section>
+
+{% endblock content %}

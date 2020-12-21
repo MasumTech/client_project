@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+{{ job.title }} | Field View Contractors
+{% endblock title %}
+
+{% block css_back %}
+<style>
+    .ms-overlay::before {
+        background-image: url("{% static 'images/masonary-bg2-1.png' %}");
+        /*background-repeat: no-repeat;
+        background-size: 1400px 700px;*/
+        background-attachment: fixed;
+    }
+</style>
+{% endblock css_back %}
+
+<style>
+    .contact-address::before {
+        visibility: hidden;
+        background-color: #ffffff;
+    }
+</style>
+
+
+
+{% block cover %}
+{% endblock cover %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="pager-details full text-center" style="padding-top: 40px; padding-bottom: 40px;">
+            <!--<h2 class="heading-title">Contact Us</h2>
+            <ul>
+                <li><a href="#" title="">Home</a></li>
+                <li><span>Works</span></li>
+            </ul>-->
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="contact-info-sec" style="">
+        <div class="container">
+            <div class="cntct-details" style="background-color: #ffffff;">
+                <div class="row">
+                 {% for job in jobs %}
+                    <div class="col-lg-12">
+                   
+                        <div class="contact-address" style="padding-bottom: 0px; margin-bottom: 40px;">
+                            <h2><strong>{{ job.title }}, </strong>{{ job.department }}</h2>
+                            <p>{{ job.description }}</p>
+                            <!--<span><b>Email:</b> infor@example.com</span>-->
+                        </div><!--contact-address end-->
+                        <div class="address">
+                            <h3>Requirements:</h3>
+                            <p>{{ job.requirements }}</p>
+                        </div>
+                        <div class="address">
+                            <h3>Responsibilities:</h3>
+                            <p>{{ job.responsibilities }}</p>
+                        </div>
+                        <div class="address">
+                            <h3>Posted on:</h3>
+                            <p>{{ job.pub_date|date }}</p>
+                        </div>
+                        <div class="address">
+                            <h3>Deadline to Apply:</h3>
+                            <p>{{ job.deadline|date }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div><!--cntct-details end-->
+            <div class="contact-form-sec" style="background-color: #ffffff;">
+            {% for job in jobs %}
+                <h3>Apply Now for {{ job.title }}</h3>
+            {% endfor %}
+                <p class="success alert alert-success" id="success" style="display:none;"></p>
+                <p class="error alert alert-danger" id="error" style="display:none;"></p>
+                <form name=""  method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                     
+                    
+                    <div class="row">
+                       
+                        <div class="col-lg-12">
+                            <input style="font-weight: 500;" type="text" name="applied_position" id="" placeholder="Possition name"  required>
+                        </div>
+                        <div class="col-lg-12">
+                            
+                            <input style="font-weight: 500;" type="file" name="resume" id="" placeholder="Upload Resume" required>
+                        </div>
+                        <div class="col-lg-6">
+                            
+                            <input style="font-weight: 500;" type="text" name="first_name" id="" placeholder="First Name*" required>
+                        </div>
+                        <div class="col-lg-6">
+                            
+                            <input style="font-weight: 500;" type="text" name="last_name" id="" placeholder="Last Name*" required>
+                        </div>
+                        <div class="col-lg-12">
+                            
+                            <input style="font-weight: 500;" type="email" name="email" placeholder="Email Address*" required>
+                        </div>
+                        <div class="col-lg-12">
+                            
+                            <input style="font-weight: 500;" type="text" name="street_address" placeholder="Street Address*" required>
+                        </div>
+                        <div class="col-lg-4">
+                            
+                            <input style="font-weight: 500;" type="text" name="city" id="" placeholder="City*" required>
+                        </div>
+                        <div class="col-lg-4">
+                            <input style="font-weight: 500;" type="text" name="state" id="" placeholder="State / Province*" required>
+                        </div>
+                        <div class="col-lg-4">
+                            
+                            <input style="font-weight: 500;" type="number" name="zip_code" placeholder="ZIP / Postal Code(Optional)">
+                        </div>
+                        <div class="col-lg-12">
+                            <input style="font-weight: 500;" type="number" name="phone" placeholder="Phone*" required>
+                        </div>
+                        <div class="col-lg-12 text-center">
+                            <button type="submit" id="">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--contact-form-sec end-->
+        </div>
+    </div><!--contact-info-sec end-->
+</section>
+{% endblock content %}
